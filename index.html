@@ -24,11 +24,13 @@
 			    }
             }
 
-            ul li a{
+            ul li{
                 position: relative;
             }
-        
-            ul li a:after {
+            #my-awesome-nav .active a{
+                color:rgb(161 98 7)
+            }
+            #my-awesome-nav .active a:after,ul li a:after{
                 content: "";
                 height: 2px;
                 width: 0px;
@@ -40,10 +42,11 @@
             }
         
             ul li a:hover::after,
-            ul li a:focus::after,
-            ul li a:active::after,
             .active::after {
                 width: 100% !important;
+            }
+            #my-awesome-nav .active a::after{
+                width: 100%;
             }
         </style>
     </head>
@@ -92,35 +95,30 @@
                                         </a>
                                     </div>
                                     <!--========-->
-                                    <ul class="space-y-4 flex flex-col items-start" x-data=" {active :'active1'}">
+                                    <ul id="my-awesome-nav" class="space-y-4 flex flex-col items-start">
                                         <!--========-->
                                         <li>
-                                            <a @click=" active='active1'" :class="{'text-yellow-700 active': active==='active1'}"
-                                                class="pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
-                                                href="/">Home</a>
+                                            <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#slide">Home</a>
                                         </li>
                                         <!--========-->
                                         <li>
-                                            <a @click=" active='active2'" :class="{'text-yellow-700 active': active==='active2'}"
-                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
-                                                href="#about">About Us</a>
-                                        </li>
-                                        <!--========-->
-                                        <li>
-                                            <a @click=" active='active3'" :class="{'text-yellow-700 active': active==='active3'}"
-                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                            <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
                                                 href="#machines">Machines</a>
                                         </li>
                                         <!--========-->
                                         <li>
-                                            <a @click=" active='active4'" :class="{'text-yellow-700 active': active==='active4'}"
-                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                            <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
                                                 href="#accessories">Accessories</a>
                                         </li>
                                         <!--========-->
                                         <li>
-                                            <a @click=" active='active5'" :class="{'text-yellow-700 active': active==='active5'}"
-                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                            <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#about">About Us</a>
+                                        </li>
+                                        <!--========-->
+                                        <li>
+                                            <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
                                                 href="#contact">Contact</a>
                                         </li>
                                     </ul>
@@ -128,37 +126,34 @@
                             </div>
                         </div> 
                         <!--========-->
-                        <ul class="hidden space-x-6 md:flex items-center" x-data=" {active :'active1'}">
+                        <ul id="my-awesome-nav" class=" hidden space-x-6 md:flex items-center">
                             <!--========-->
                             <li>
-                                <a @click=" active='active1'" :class="{'text-yellow-700 active': active==='active1'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="/">Home</a>
+                                <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#slide">Home</a>
                             </li>
                             <!--========-->
                             <li>
-                                <a @click=" active='active2'" :class="{'text-yellow-700 active': active==='active2'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#about">About Us</a>
+                                <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#machines">Machines</a>
                             </li>
                             <!--========-->
                             <li>
-                                <a @click=" active='active3'" :class="{'text-yellow-700 active': active==='active3'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#machines">Machines</a>
+                                <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#accessories">Accessories</a>
                             </li>
                             <!--========-->
                             <li>
-                                <a @click=" active='active4'" :class="{'text-yellow-700 active': active==='active4'}"
-                                    class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
-                                    href="#accessories">Accessories</a>
+                                <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                    href="#about">About Us</a>
                             </li>
                             <!--========-->
                             <li>
-                                <a @click=" active='active5'" :class="{'text-yellow-700 active': active==='active5'}"
-                                    class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
-                                    href="#contact">Contact</a>
+                                <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#contact">Contact</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <!--====slider section====-->
-            <div class="duration-500 h-full flex items-center justify-start  container mx-auto lg:px-10 sm:px-6 px-4 pt-10 pb-24">
+            <div id="slide" class="duration-500 h-full flex items-center justify-start  container mx-auto lg:px-10 sm:px-6 px-4 pt-10 pb-24">
                 <!--========-->
                 <div class=" xl:w-2/5 sm:w-3/5 ">
                     <!--========-->
@@ -1712,5 +1707,13 @@
 
         <!--  Alpine Js -->
         <script src="js/alpine.min.js" defer></script>
+
+       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@4/dist/gumshoe.polyfills.min.js"></script>
+
+       <script>
+            var spy = new Gumshoe('#my-awesome-nav a', {
+                   offset: 150,
+                });
+       </script>
     </body>
 </html>
