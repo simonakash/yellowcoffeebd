@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="bn">
+    <!--====================head====================-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#4285f4">
+        <link rel="shortcut icon" href="images/logo/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/logo/favicon.ico" type="image/x-icon">
+        <!--------->
+        <title>YellowCoffeebd</title>
+        
+        <!-----image gallary---->
+        <link rel="stylesheet" href="css/lightgallery.min.css" />
+        <!-----wow js css---->
+        <link rel="stylesheet" href="css/animate.min.css">
+        <!-----Tailwind css---->
+        <link rel="stylesheet" href="output/tailwind.css">
+
+        <style>
+            @media screen and (prefers-reduced-motion: no-preference) {
+			html {
+				scroll-behavior: smooth;
+			    }
+            }
+
+            ul li a{
+                position: relative;
+            }
+        
+            ul li a:after {
+                content: "";
+                height: 2px;
+                width: 0px;
+                left: 0;
+                bottom: -2px;
+                position: absolute;
+                background: rgb(161 98 7);
+                transition-duration: .4s;
+            }
+        
+            ul li a:hover::after,
+            ul li a:focus::after,
+            ul li a:active::after,
+            .active::after {
+                width: 100% !important;
+            }
+        </style>
+    </head>
+
+    <!--====================body====================-->
+    <body x-data="{sticky: true}">
+        <!-- ==========section 001========== -->
+        <header class=" bg-cover bg-center" style="background-image: url(images/bg/2.jpg);">
+            <!--====================Header====================-->
+            <div @scroll.window="sticky= (window.pageYOffset > 100) ? false :true"
+                :class="{'bg-white fixed drop-shadow-xl py-1' : !sticky,' pt-3 pb-8' : sticky}"
+                class="z-50 duration-500 filter right-0 top-0 left-0">
+                <!--========-->
+                <div class=" container mx-auto lg:px-10 sm:px-6 px-4 py-3 flex items-center justify-between font-raleway">
+                    <!--====logo====-->
+                    <div>
+                        <a href="/">
+                            <img class=" w-32 h-auto" height="100%" width="100%" src="images/logo/yellow.png" alt="//">
+                        </a>
+                    </div>
+                    <!--====navb====-->
+                    <nav>
+                        <!--====Mobile menu====-->
+                        <div x-data="{humberger: false}">
+                            <!--====Mobile menu button====-->
+                            <div @click="humberger=!humberger"
+                                class="tracking-wider font-thin text-sm text-gray-700 hover:text-yellow-700 duration-300 flex items-center md:hidden cursor-pointer">
+                                <!--========-->
+                                <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                                <!--========-->
+                                <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                            <!--====Mobile menu====-->
+                            <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
+                                class="fixed lg:hidden w-3/5 transform transition-transform duration-700 ease-in-out z-50 bg-white left-0 top-0 h-screen shadow-md">
+                                <!--====menu====-->
+                                <div class=" p-4">
+                                    <!--====logo====-->
+                                    <div class=" mb-16">
+                                        <a href="/">
+                                            <img class=" w-full mx-auto h-auto" height="100%" width="100%" src="images/logo/yellow.png" alt="//">
+                                        </a>
+                                    </div>
+                                    <!--========-->
+                                    <ul class="space-y-4 flex flex-col items-start" x-data=" {active :'active1'}">
+                                        <!--========-->
+                                        <li>
+                                            <a @click=" active='active1'" :class="{'text-yellow-700 active': active==='active1'}"
+                                                class="pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="/">Home</a>
+                                        </li>
+                                        <!--========-->
+                                        <li>
+                                            <a @click=" active='active2'" :class="{'text-yellow-700 active': active==='active2'}"
+                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#about">About Us</a>
+                                        </li>
+                                        <!--========-->
+                                        <li>
+                                            <a @click=" active='active3'" :class="{'text-yellow-700 active': active==='active3'}"
+                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#machines">Machines</a>
+                                        </li>
+                                        <!--========-->
+                                        <li>
+                                            <a @click=" active='active4'" :class="{'text-yellow-700 active': active==='active4'}"
+                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#accessories">Accessories</a>
+                                        </li>
+                                        <!--========-->
+                                        <li>
+                                            <a @click=" active='active5'" :class="{'text-yellow-700 active': active==='active5'}"
+                                                class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                                href="#contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                        <!--========-->
+                        <ul class="hidden space-x-6 md:flex items-center" x-data=" {active :'active1'}">
+                            <!--========-->
+                            <li>
+                                <a @click=" active='active1'" :class="{'text-yellow-700 active': active==='active1'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="/">Home</a>
+                            </li>
+                            <!--========-->
+                            <li>
+                                <a @click=" active='active2'" :class="{'text-yellow-700 active': active==='active2'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#about">About Us</a>
+                            </li>
+                            <!--========-->
+                            <li>
+                                <a @click=" active='active3'" :class="{'text-yellow-700 active': active==='active3'}" class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300" href="#machines">Machines</a>
+                            </li>
+                            <!--========-->
+                            <li>
+                                <a @click=" active='active4'" :class="{'text-yellow-700 active': active==='active4'}"
+                                    class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                    href="#accessories">Accessories</a>
+                            </li>
+                            <!--========-->
+                            <li>
+                                <a @click=" active='active5'" :class="{'text-yellow-700 active': active==='active5'}"
+                                    class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
+                                    href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--====slider section====-->
+            <div class="duration-500 h-full flex items-center justify-start  container mx-auto lg:px-10 sm:px-6 px-4 pt-10 pb-24">
+                <!--========-->
+                <div class=" xl:w-2/5 sm:w-3/5 ">
+                    <!--========-->
+                    <h1 class=" lg:text-6xl sm:text-5xl text-4xl font-playfair font-medium leading-normal mb-6 italic">Quality Coffee delivered to your Door</h1>
+                    <!--========-->
+                    <p class="font-raleway lg:text-lg sm:text-base text-sm text-gray-500 mb-6 lg:w-4/5">Everything we do is a matter of heart, body and soul. Our mission is to provide sustainably sourced, hand-picked, quality coffee.</p>
+                    <!--========--> 
+                    <a class="inline-block px-14 font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300" href="https://www.facebook.com/saymonakash310/shop">Shop Coffees</a>
+                </div>
+            </div>
+        </header>
+        <!--====================main====================-->
+        <main>
+            <!--====section 001====-->
+            <section id="machines">
+                <!--========-->
+                <div class="container mx-auto lg:px-10 sm:px-6 px-4 mt-20">
+                    <!--====text====-->
+                    <div class=" text-center">
+                        <h1 class=" md:text-5xl text-4xl text-gray-900 font-playfair italic mb-6">Machines</h1>
+                        <!--========-->
+                        <p class="font-raleway lg:text-base md:text-sm text-xs w-11/12 sm:w-4/5 md:w-3/5 xl:w-2/4 2xl:w-2/5 mx-auto text-gray-600">Everything we do is a matter of heart, body and soul. Our mission is to provide sustainably sourced, hand-picked, quality Machines.</p>
+                    </div>
+                    <!--====items====-->
+                    <div class=" grid lg:grid-cols-2 grid-cols-1 gap-8 pt-10 ">
+                        <!--========-->
+                        <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
+                            <!--========-->
+                            <div class=" overflow-hidden flex jutify-center items-center">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div class="p-4 font-raleway flex flex-col justify-center">
+                                <!--Titile-->
+                                <p class=" lg:text-2xl text-xl font-medium text-gray-700">Airplane Tickets</p>
+                                <!--Rating-->
+                                <div class=" flex items-center justify-start space-x-1 my-2">
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!--Titile-->
+                                <p class="md:text-sm text-xs font-medium text-gray-500 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur suscipit, fuga culpa tempora magni vero odit quae mollitia consequuntur! Temporibus.</p>
+                                <!--Price-->
+                                <div class=" flex items-center justify-start mt-2 font-mono">
+                                    <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                    <span class=" text-gray-500"><del>£450.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
+                            <!--========-->
+                            <div class=" overflow-hidden flex jutify-center items-center">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/2.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div class="p-4 font-raleway flex flex-col justify-center">
+                                <!--Titile-->
+                                <p class=" lg:text-2xl text-xl font-medium text-gray-700">Airplane Tickets</p>
+                                <!--Rating-->
+                                <div class=" flex items-center justify-start space-x-1 my-2">
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!--Titile-->
+                                <p class="md:text-sm text-xs font-medium text-gray-500 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur suscipit, fuga culpa tempora magni vero odit quae mollitia consequuntur! Temporibus.</p>
+                                <!--Price-->
+                                <div class=" flex items-center justify-start mt-2 font-mono">
+                                    <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                    <span class=" text-gray-500"><del>£450.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
+                            <!--========-->
+                            <div class=" overflow-hidden flex jutify-center items-center">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/3.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div class="p-4 font-raleway flex flex-col justify-center">
+                                <!--Titile-->
+                                <p class=" lg:text-2xl text-xl font-medium text-gray-700">Airplane Tickets</p>
+                                <!--Rating-->
+                                <div class=" flex items-center justify-start space-x-1 my-2">
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!--Titile-->
+                                <p class="md:text-sm text-xs font-medium text-gray-500 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur suscipit, fuga culpa tempora magni vero odit quae mollitia consequuntur! Temporibus.</p>
+                                <!--Price-->
+                                <div class=" flex items-center justify-start mt-2 font-mono">
+                                    <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                    <span class=" text-gray-500"><del>£450.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
+                            <!--========-->
+                            <div class=" overflow-hidden flex jutify-center items-center">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/4.jpg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div class="p-4 font-raleway flex flex-col justify-center">
+                                <!--Titile-->
+                                <p class=" lg:text-2xl text-xl font-medium text-gray-700">Airplane Tickets</p>
+                                <!--Rating-->
+                                <div class=" flex items-center justify-start space-x-1 my-2">
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                    <!---->
+                                    <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                        <path
+                                            d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <!--Titile-->
+                                <p class="md:text-sm text-xs font-medium text-gray-500 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur suscipit, fuga culpa tempora magni vero odit quae mollitia consequuntur! Temporibus.</p>
+                                <!--Price-->
+                                <div class=" flex items-center justify-start mt-2 font-mono">
+                                    <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                    <span class=" text-gray-500"><del>£450.00</del></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====button====-->
+                    <div class="mt-10 text-center">
+                        <a class="inline-block px-14 text-center font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300" href="https://www.facebook.com/saymonakash310/shop">Buy Machines</a>
+                    </div>
+                </div>
+            </section>
+            <!--====section 002====-->
+            <section id="accessories">
+                <!--========-->
+                <div class="container mx-auto lg:px-10 sm:px-6 px-4 mt-20">
+                    <!--====text====-->
+                    <div class=" text-center">
+                        <h1 class=" md:text-5xl text-4xl text-gray-900 font-playfair italic mb-6">Accessories</h1>
+                        <!--========-->
+                        <p class="font-raleway lg:text-base md:text-sm text-xs w-11/12 sm:w-4/5 md:w-3/5 xl:w-2/4 2xl:w-2/5 mx-auto text-gray-600">Everything we do is a matter of heart, body and soul. Our mission is to provide sustainably sourced, hand-picked, quality Machines.</p>
+                    </div>
+                    <!--====Accessories content====-->
+                    <div x-data="{ items:'coffee'}">
+                        <!--====button====-->
+                        <div class=" flex items-center justify-center py-10 space-x-0.5">
+                            <!--========-->
+                            <div @click="items='coffee'" :class="{'bg-yellow-700 text-white' : items==='coffee'}" class="cursor-pointer h-24 sm:h-28 w-40 flex flex-col items-center justify-center duration-500 hover:text-white text-gray-800 hover:bg-yellow-700 border-2 border-yellow-700 sm::px-16 px-5 text-center">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" class=" md:w-10 w-7 h-7 md:h-10 mx-auto" viewBox="0 0 512 512">
+                                    <path
+                                        d="M400 192H32C14.25 192 0 206.3 0 224v192c0 53 43 96 96 96h192c53 0 96-43 96-96h16c61.75 0 112-50.25 112-112S461.8 192 400 192zM400 352H384V256h16C426.5 256 448 277.5 448 304S426.5 352 400 352zM107.9 100.7C120.3 107.1 128 121.4 128 136c0 13.25 10.75 23.89 24 23.89S176 148.1 176 135.7c0-31.34-16.83-60.64-43.91-76.45C119.7 52.03 112 38.63 112 24.28c0-13.25-10.75-24.14-24-24.14S64 11.03 64 24.28C64 55.63 80.83 84.92 107.9 100.7zM219.9 100.7C232.3 107.1 240 121.4 240 136c0 13.25 10.75 23.86 24 23.86S288 148.1 288 135.7c0-31.34-16.83-60.64-43.91-76.45C231.7 52.03 224 38.63 224 24.28c0-13.25-10.75-24.18-24-24.18S176 11.03 176 24.28C176 55.63 192.8 84.92 219.9 100.7z" />
+                                </svg>
+                                <!--========-->
+                                <p class=" md:text-xl sm:text-base text-xs font-playfair italic font-semibold mt-2">Buy Coffee</p>
+                            </div>
+                            <!--========-->
+                            <div @click="items='tea'" :class="{'bg-yellow-700 text-white' : items==='tea'}" class="cursor-pointer h-24 sm:h-28 w-40 flex flex-col items-center justify-center duration-500 hover:text-white text-gray-800 hover:bg-yellow-700 border-2 border-yellow-700 sm::px-16 px-5 text-center">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg"  stroke="currentColor" fill="currentColor" class=" md:w-10 w-7 h-7 md:h-10 mx-auto" viewBox="0 0 640 512">
+                                    <path
+                                        d="M512 32H120c-13.25 0-24 10.75-24 24L96.01 288c0 53 43 96 96 96h192C437 384 480 341 480 288h32c70.63 0 128-57.38 128-128S582.6 32 512 32zM512 224h-32V96h32c35.25 0 64 28.75 64 64S547.3 224 512 224zM560 416h-544C7.164 416 0 423.2 0 432C0 458.5 21.49 480 48 480h480c26.51 0 48-21.49 48-48C576 423.2 568.8 416 560 416z" />
+                                </svg>
+                                <!--========-->
+                                <p class="md:text-xl sm:text-base text-xs font-playfair italic font-semibold mt-2">Buy Tea</p>
+                            </div>
+                            <!--========-->
+                            <div @click="items='cup'" :class="{'bg-yellow-700 text-white' : items==='cup'}" class="cursor-pointer h-24 sm:h-28 w-40 flex flex-col items-center justify-center duration-500 hover:text-white text-gray-800 hover:bg-yellow-700 border-2 border-yellow-700 sm::px-16 px-5 text-center">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" class=" md:w-10 w-7 h-7 md:h-10 mx-auto" viewBox="0 0 512 512">
+                                    <path
+                                        d="M432 96H384V64c0-17.67-14.33-32-32-32H64C46.33 32 32 46.33 32 64v352c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64v-32.08l80.66-35.94C493.5 335.1 512 306.5 512 275V176C512 131.8 476.2 96 432 96zM160 368C160 376.9 152.9 384 144 384S128 376.9 128 368v-224C128 135.1 135.1 128 144 128S160 135.1 160 144V368zM224 368C224 376.9 216.9 384 208 384S192 376.9 192 368v-224C192 135.1 199.1 128 208 128S224 135.1 224 144V368zM288 368c0 8.875-7.125 16-16 16S256 376.9 256 368v-224C256 135.1 263.1 128 272 128S288 135.1 288 144V368zM448 275c0 6.25-3.75 12-9.5 14.62L384 313.9V160h48C440.9 160 448 167.1 448 176V275z" />
+                                </svg>
+                                <!--========-->
+                                <p class=" md:text-xl sm:text-base text-xs font-playfair italic font-semibold mt-2">Buy Cup</p>
+                            </div>
+                        </div>
+                        <!--====coffee====-->
+                        <div x-show="items==='coffee'" x-transition.duration.500ms>
+                            <!--====items====-->
+                            <div class=" grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 pt-10 ">
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/1.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/2.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/3.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/4.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/5.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/6.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/7.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/coffee/8.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Coffee</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--====button====-->
+                            <div class="mt-10 text-center">
+                                <a class="inline-block px-14 text-center font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300"
+                                    href="https://www.facebook.com/saymonakash310/shop">Buy Coffee</a>
+                            </div>
+                        </div>
+                        <!--====tea====-->
+                        <div x-show="items==='tea'" x-transition.duration.500ms>
+                            <!--====items====-->
+                            <div class=" grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 pt-10 ">
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/1.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/2.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/3.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/4.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/5.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/6.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/7.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/tea/8.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Tea</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--====button====-->
+                            <div class="mt-10 text-center">
+                                <a class="inline-block px-14 text-center font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300"
+                                    href="https://www.facebook.com/saymonakash310/shop">Buy Tea</a>
+                            </div>
+                        </div>
+                        <!--====cup====-->
+                        <div x-show="items==='cup'" x-transition.duration.500ms>
+                            <!--====items====-->
+                            <div class=" grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 pt-10 ">
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/1.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/2.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/3.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/4.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/5.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/6.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/7.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--========-->
+                                <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md">
+                                    <!--========-->
+                                    <div class=" overflow-hidden flex jutify-center items-center">
+                                        <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
+                                            width="100%" src="images/accessories/cup/8.jpg" alt="//">
+                                    </div>
+                                    <!--========-->
+                                    <div class="p-4 font-raleway">
+                                        <!--Titile-->
+                                        <p class=" lg:text-2xl text-xl font-medium text-gray-700">Cup</p>
+                                        <!--Rating-->
+                                        <div class=" flex items-center justify-start space-x-1 my-2">
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                            <!---->
+                                            <svg class=" w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 26 28">
+                                                <path
+                                                    d="M0 10.109q0-0.578 0.875-0.719l7.844-1.141 3.516-7.109q0.297-0.641 0.766-0.641t0.766 0.641l3.516 7.109 7.844 1.141q0.875 0.141 0.875 0.719 0 0.344-0.406 0.75l-5.672 5.531 1.344 7.812q0.016 0.109 0.016 0.313 0 0.328-0.164 0.555t-0.477 0.227q-0.297 0-0.625-0.187l-7.016-3.687-7.016 3.687q-0.344 0.187-0.625 0.187-0.328 0-0.492-0.227t-0.164-0.555q0-0.094 0.031-0.313l1.344-7.812-5.688-5.531q-0.391-0.422-0.391-0.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <!--Price-->
+                                        <div class=" flex items-center justify-start mt-2 font-mono">
+                                            <span class=" text-gray-800 text-xl font-bold mr-4">£350.00</span>
+                                            <span class=" text-gray-500"><del>£450.00</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--====button====-->
+                            <div class="mt-10 text-center">
+                                <a class="inline-block px-14 text-center font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300"
+                                    href="https://www.facebook.com/saymonakash310/shop">Buy Tea</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--====================footer====================-->
+        <footer class=" h-screen">
+            <!--========-->
+        </footer>
+
+        <!--  Alpine Js -->
+        <script src="js/alpine.min.js" defer></script>
+    </body>
+</html>
