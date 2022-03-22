@@ -27,10 +27,10 @@
             ul li{
                 position: relative;
             }
-            #my-awesome-nav .active a{
+             .active a{
                 color:rgb(161 98 7)
             }
-            #my-awesome-nav .active a:after,ul li a:after{
+             .active a:after,ul li a:after{
                 content: "";
                 height: 2px;
                 width: 0px;
@@ -42,10 +42,10 @@
             }
         
             ul li a:hover::after,
-            .active::after {
+            .active a::after {
                 width: 100% !important;
             }
-            #my-awesome-nav .active a::after{
+            .active a::after{
                 width: 100%;
             }
         </style>
@@ -95,7 +95,7 @@
                                         </a>
                                     </div>
                                     <!--========-->
-                                    <ul id="my-awesome-nav" class="space-y-4 flex flex-col items-start">
+                                    <ul id="my-awesome-nav1" class="space-y-4 flex flex-col items-start">
                                         <!--========-->
                                         <li>
                                             <a class=" pb-1 font-medium tracking-widest text-sm text-gray-800 uppercase hover:text-yellow-700 duration-300"
@@ -1712,6 +1712,9 @@
 
        <script>
             var spy = new Gumshoe('#my-awesome-nav a', {
+                   offset: 150,
+                });
+            var spy = new Gumshoe('#my-awesome-nav1 a', {
                    offset: 150,
                 });
        </script>
