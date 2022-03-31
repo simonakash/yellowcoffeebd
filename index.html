@@ -54,7 +54,7 @@
     <!--====================body====================-->
     <body x-data="{sticky: true}">
         <!-- ==========section 001========== -->
-        <header class=" bg-cover bg-center" style="background-image: url(images/bg/2.jpg);">
+        <header class=" bg-cover bg-center " style="background-image: url(images/bg/2.jpg);">
             <!--====================Header====================-->
             <div id="navbar" @scroll.window="sticky= (window.pageYOffset > 100) ? false :true"
                 :class="{'bg-white fixed drop-shadow-xl py-1' : !sticky,' pt-3 pb-8' : sticky}"
@@ -72,16 +72,27 @@
                         <!--====Mobile menu====-->
                         <div x-data="{humberger: false}">
                             <!--====Mobile menu button====-->
-                            <div @click="humberger=!humberger"
-                                class="tracking-wider font-thin text-sm text-gray-700 hover:text-yellow-700 duration-300 flex items-center md:hidden cursor-pointer">
+                            <div class=" flex items-center space-x-5">
                                 <!--========-->
-                                <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
+                                <a class="text-gray-700 hover:text-yellow-700 duration-300 flex items-center md:hidden" href="tel:+8801741909998">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" stroke="currentColor" viewBox="0 0 512 512">
+                                        <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z" />
+                                    </svg>
+                                </a>
                                 <!--========-->
-                                <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
+                                <div @click="humberger=!humberger"
+                                    class="tracking-wider font-thin text-sm text-gray-700 hover:text-yellow-700 duration-300 flex items-center md:hidden cursor-pointer">
+                                    <!--========-->
+                                    <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                    <!--========-->
+                                    <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
                             </div>
                             <!--====Mobile menu====-->
                             <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
@@ -183,7 +194,7 @@
                         <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
                             <!--========-->
                             <div class="overflow-hidden flex jutify-center items-center">
-                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.jpg" alt="//">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.png" alt="//">
                             </div>
                             <!--========-->
                             <div class="p-4 font-raleway flex flex-col justify-center">
@@ -244,7 +255,7 @@
                         <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
                             <!--========-->
                             <div class="overflow-hidden flex jutify-center items-center">
-                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/2.jpg" alt="//">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.png" alt="//">
                             </div>
                             <!--========-->
                             <div class="p-4 font-raleway flex flex-col justify-center">
@@ -305,7 +316,7 @@
                         <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
                             <!--========-->
                             <div class="overflow-hidden flex jutify-center items-center">
-                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/3.jpg" alt="//">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.png" alt="//">
                             </div>
                             <!--========-->
                             <div class="p-4 font-raleway flex flex-col justify-center">
@@ -366,7 +377,7 @@
                         <div class=" group cursor-pointer bg-sky-50 filter drop-shadow-md shadow-md rounded-md grid sm:grid-cols-2 grid-cols-1">
                             <!--========-->
                             <div class="overflow-hidden flex jutify-center items-center">
-                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/4.jpg" alt="//">
+                                <img class=" w-3/4 sm:w-full h-auto mx-auto transform duration-700 group-hover:scale-110" height="100%" width="100%" src="images/machines/1.png" alt="//">
                             </div>
                             <!--========-->
                             <div class="p-4 font-raleway flex flex-col justify-center">
@@ -484,7 +495,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/1.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -535,7 +546,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/2.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -586,7 +597,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/3.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -637,7 +648,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/4.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -688,7 +699,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/5.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -739,7 +750,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/6.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -790,7 +801,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/7.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -841,7 +852,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/coffee/8.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -903,7 +914,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/1.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -954,7 +965,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/2.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1005,7 +1016,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/3.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1056,7 +1067,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/4.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1107,7 +1118,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/5.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1158,7 +1169,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/6.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1209,7 +1220,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/7.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1260,7 +1271,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/tea/8.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1322,7 +1333,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class=" w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/1.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1373,7 +1384,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/2.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1424,7 +1435,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/3.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1475,7 +1486,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/4.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1526,7 +1537,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/5.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1577,7 +1588,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/6.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1628,7 +1639,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/7.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1679,7 +1690,7 @@
                                     <!--========-->
                                     <div class=" overflow-hidden flex jutify-center items-center">
                                         <img class="w-full object-cover object-center h-auto sm:h-60 mx-auto transform duration-700 group-hover:scale-110" height="100%"
-                                            width="100%" src="images/accessories/cup/8.jpg" alt="//">
+                                            width="100%" src="images/accessories/1.jpg" alt="//">
                                     </div>
                                     <!--========-->
                                     <div class="p-4 font-raleway">
@@ -1729,7 +1740,7 @@
                             <!--====button====-->
                             <div class="mt-10 text-center">
                                 <a class="inline-block px-14 text-center font-medium uppercase tracking-widest 2xl:text-base sm:text-sm text-xs py-3 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-white duration-300"
-                                    href="https://www.facebook.com/saymonakash310/shop">Buy Tea</a>
+                                    href="https://www.facebook.com/saymonakash310/shop">Buy Cup</a>
                             </div>
                         </div>
                     </div>
@@ -1749,9 +1760,94 @@
                             hand-picked, quality Machines.</p>
                     </div>
                     <!--====items====-->
-                    <div class=" grid lg:grid-cols-2 grid-cols-1 gap-6 pt-10 ">
+                    <div class=" grid sm:grid-cols-2 grid-cols-1 items-center gap-10 pt-20">
                         <!--========-->
-                        
+                        <div>
+                            <img class=" w-3/4 sm:w-full lg:w-3/4 h-auto mx-auto" height="100%" width="100%" src="images/machines/1.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div class=" font-raleway">
+                            <!--========-->
+                            <ul class=" lg:space-y-6 space-y-4">
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">সহজে স্থাপনযোগ্য আধুনিক প্রযুক্তির মেশিন</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">এক চাপেই স্বয়ংকৃয়ভাবে কফি/চা বেরিয়ে আসে</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">কুইক সার্ভিস মেশিনে ঝটপট গরম পানি</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">প্রতি মিনিটে ৬-৮ কাপ চা/ কফি পরিবেশন সম্ভব</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">ফ্লেভার বাটনে একাধিক ফ্লেভারের কফি/ চা</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-center space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">কত কাপ কফি/ চা সরবরাহ হচ্ছে তার হিসাব</p>
+                                </li>
+                                <!--========-->
+                                <li class=" flex items-start space-x-3">
+                                    <!--========-->
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                    <!--========-->
+                                    <p class="lg:text-xl sm:text-base text-sm text-gray-600 font-semibold">বাটন চাপলেই অটোমেটিক্যালি মেশিন পরিস্কার</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1927,6 +2023,39 @@
             </div>
         </footer>
         
+
+        <!--====================Massanger Button====================-->
+        <!-- Messenger Chat plugin Code -->
+        <div id="fb-root"></div>
+        <!-- Your Chat plugin code -->
+        <div id="fb-customer-chat" class="fb-customerchat">
+        </div>
+        <script>
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "113691597620427");
+            chatbox.setAttribute("attribution", "biz_inbox");
+        </script>
+        <!-- Your SDK code -->
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    xfbml: true,
+                    version: 'v13.0'
+                });
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!--====================Massanger Button End====================-->
+
+
+
         <!--  Alpine Js -->
         <script src="js/alpine.min.js" defer></script>
 
